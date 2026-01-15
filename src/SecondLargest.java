@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class SecondLargest {
-    
+
         // TODO: Read N
         // TODO: Read array elements
         // TODO: Find and print the second largest element
@@ -16,18 +16,17 @@ public class SecondLargest {
         }
         int firstMax=arr[0];
         int secondMax=Integer.MIN_VALUE;
-        for(int j=0;j<N;j++){
-            if(arr[j]>=firstMax) {
+        for(int j=1;j<N;j++){
+            if(arr[j]>firstMax) {
                 secondMax=firstMax;
                 firstMax=arr[j];
             }
-            if(arr[j]<firstMax){
-                if(arr[j]>secondMax){
-                    secondMax=arr[j];
-                }
+            // check if the number is below firstMax and greater than secondMax
+            if (arr[j] > secondMax && arr[j] <= firstMax) {
+               secondMax=arr[j];
             }
         }
         System.out.print(secondMax);
     }
-    
+
 }
