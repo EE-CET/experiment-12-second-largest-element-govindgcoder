@@ -17,12 +17,11 @@ public class SecondLargest {
         int firstMax=arr[0];
         int secondMax=Integer.MIN_VALUE;
         for(int j=0;j<N;j++){
-            if(arr[j]>firstMax) {
+            if(arr[j]>=firstMax) {
                 secondMax=firstMax;
                 firstMax=arr[j];
             }
             if(arr[j]<firstMax){
-                if(secondMax==0){}
                 if(arr[j]>secondMax){
                     secondMax=arr[j];
                 }
